@@ -1,0 +1,15 @@
+a,
+a:active,
+a:visited,
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.pager {
+    text-align: center;
+}
+
+.pager a.active {
+    font-weight: bold;
+}

@@ -1,0 +1,20 @@
+{% extends 'AcmeNewsBundle::layout.html.twig' %}
+
+{% from 'AcmeNewsBundle::macros.html.twig' import paginator %}
+
+{% block body %}
+    <section>
+        {% for item in news %}
+            <article>
+                <h1>{{ item.title }}</h1>
+                <p>{{ item.body }}</p>
+                <time>{{ item.date|date('Y-m-d H:m:i') }}</time>
+            </article>
+            <hr />
+        {% else %}
+            <p>There are no news currently available.</p>
+        {% endfor %}
+
+        {{ paginator(page, news|length, 5, 'acme_news_news_list') }}
+    </section>
+{% endblock %}

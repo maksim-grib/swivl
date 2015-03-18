@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+{% for item in news %}
+    <item id="{{ item.id }}" date="{{ item.date|date('Y-m-d H:m:i') }}">
+        <announce>{{ item.title }}</announce>
+        <description><![CDATA[{{ item.body }}]]></description>
+    </item>
+{% endfor %}
+</list>
